@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>936,2303</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>691,2303</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -194,7 +194,7 @@
                             <FlowStep.Next>
                               <FlowDecision x:Name="__ReferenceID0" DisplayName="¿Es una Solicitud?" sap:VirtualizedContainerService.HintSize="99,87" sap2010:WorkflowViewState.IdRef="FlowDecision_20">
                                 <FlowDecision.Condition>
-                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="StringDocto.Contains(&quot;fatca crs del titular&quot;)" />
+                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="StringDocto.Contains(&quot;crs del titular&quot;)" />
                                 </FlowDecision.Condition>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
