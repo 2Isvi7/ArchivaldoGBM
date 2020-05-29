@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>714,2378</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>936,2378</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Información_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -53,7 +53,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Llena el apartado de información en el checklist" DisplayName="Información" sap:VirtualizedContainerService.HintSize="724,2213" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -92,7 +91,7 @@
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="fc68bf6f4a3bca1c51cc71abdc0bd797" Selector="&lt;html app='chrome.exe' title='*Salesforce*' /&gt;&lt;webctrl parentid='brandBand_*' parentname='main' tag='DIV' /&gt;" TimeoutMS="60000" WaitForReady="COMPLETE" />
       </ui:SendHotkey.Target>
     </ui:SendHotkey>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Abrir check list de validacion" sap:VirtualizedContainerService.HintSize="682,106" sap2010:WorkflowViewState.IdRef="Click_39" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DelayBefore="500" DisplayName="Abrir check list de validacion" sap:VirtualizedContainerService.HintSize="682,106" sap2010:WorkflowViewState.IdRef="Click_39" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>

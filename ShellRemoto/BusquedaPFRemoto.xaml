@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="BusquedaPFRemoto" this:BusquedaPFRemoto.in_NumeroContrato="210584" this:BusquedaPFRemoto.in_Company="Casa de Bolsa" this:BusquedaPFRemoto.in_TipoContrato="1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="BusquedaPFRemoto" this:BusquedaPFRemoto.in_NumeroContrato="209907" this:BusquedaPFRemoto.in_Company="Casa de Bolsa" this:BusquedaPFRemoto.in_TipoContrato="1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_NumeroContrato" Type="InArgument(x:String)" />
     <x:Property Name="in_Company" Type="InArgument(x:String)" />
@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>951,13292</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>936,13531</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BusquedaPFRemoto_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -571,9 +571,9 @@
                     </ActivityFunc>
                   </ui:GetOCRText.OCREngine>
                   <ui:GetOCRText.Target>
-                    <ui:Target Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="2546cdd14cddf7ae696aa96db923704e">
+                    <ui:Target Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="10785aefd507ea8eac3fda56eeb54ad5">
                       <ui:Target.ClippingRegion>
-                        <ui:Region Rectangle="875, 374, 204, 26" />
+                        <ui:Region Rectangle="874, 374, 205, 26" />
                       </ui:Target.ClippingRegion>
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
