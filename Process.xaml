@@ -139,7 +139,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">130,566 130,596 210.5,596 210.5,616.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Extraer texto de documentos" sap:VirtualizedContainerService.HintSize="670,770" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[ArrayDocumentos]">
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Extraer texto de documentos" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[ArrayDocumentos]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:String">
                     <ActivityAction.Argument>
@@ -184,7 +184,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">300,256 300,286 310,286 310,306.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log texto extraido del documento" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Texto extraido del documento: &quot;+PathDocto]">
+                            <ui:LogMessage DisplayName="Log texto extraido del documento" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Extrallendo texto de documentos del caso: &quot;+in_TransactionItem(0).ToString]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,10 +192,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
                             <FlowStep.Next>
-                              <FlowDecision x:Name="__ReferenceID0" DisplayName="¿Es una Solicitud?" sap:VirtualizedContainerService.HintSize="99,87" sap2010:WorkflowViewState.IdRef="FlowDecision_20">
-                                <FlowDecision.Condition>
-                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="StringDocto.Contains(&quot;crs del titular&quot;)" />
-                                </FlowDecision.Condition>
+                              <FlowDecision x:Name="__ReferenceID0" Condition="[StringDocto.Contains(&quot;crs del titular&quot;)]" DisplayName="¿Es una Solicitud?" sap:VirtualizedContainerService.HintSize="99,87" sap2010:WorkflowViewState.IdRef="FlowDecision_20">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -335,16 +332,35 @@
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="x:String" Name="StringDocumento" />
                                         </ActivityAction.Argument>
-                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar Validar documentos correctos" sap:VirtualizedContainerService.HintSize="375,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="AnalisisDocumentos\ValidarDocumentosCorrectos.xaml">
+                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar Validar documentos correctos" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="AnalisisDocumentos\ValidarDocumentosCorrectos.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_StringDocumento">[StringDocumento]</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_Nombre">[DataClienteBusqueda(0).ToString]</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_CURP">[DataClienteBusqueda(4).ToString]</InArgument>
-                                            <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_Cliente">[Cliente]</InOutArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_DireccionFiscal">[DataClienteBusqueda(7).ToString]</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_DireccionResidencial">[DataClienteBusqueda(8).ToString]</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_PathBancos">[in_Config("PathBDBancos").ToString]</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_Cuenta">[DataClienteBusqueda(12).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_StringDocumento">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StringDocumento" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_Nombre">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataClienteBusqueda(0).ToString" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_CURP">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataClienteBusqueda(4).ToString" />
+                                            </InArgument>
+                                            <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_Cliente">
+                                              <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="Cliente" />
+                                            </InOutArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_DireccionFiscal">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataClienteBusqueda(7).ToString" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_DireccionResidencial">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataClienteBusqueda(8).ToString" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_PathBancos">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PathBDBancos&quot;).ToString" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_Cuenta">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataClienteBusqueda(12).ToString" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_NumeroCaso">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(0).ToString" />
+                                            </InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -366,8 +382,15 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MatrizTipificacion workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Salesforce\MatrizTipificacion.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_NumeroContrato">[NumeroContrato]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_NombreCliente">[DataClienteBusqueda(0).ToString]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_NumeroContrato">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NumeroContrato" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_NombreCliente">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataClienteBusqueda(0).ToString" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_NumeroCaso">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(0).ToString" />
+                                          </InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -384,13 +407,26 @@
                                               <av:PointCollection x:Key="ConnectorLocation">230,1416.5 230,1446.5 320,1446.5 320,1524.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Preparar respuesta del cliente" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="AnalisisDocumentos/Herramientas/PrepararRespuestaCliente.xaml">
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Preparar respuesta del cliente" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="AnalisisDocumentos/Herramientas/PrepararRespuestaCliente.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_PathLog">[in_Config("PathLog").ToString]</InArgument>
-                                              <InArgument x:TypeArguments="sd:DataRow" x:Key="in_Cliente">[Cliente]</InArgument>
-                                              <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataSolicitud">[Registro]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_CasoHijo">[CasoHijo]</InArgument>
-                                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_PathLog">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PathLog&quot;).ToString" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="sd:DataRow" x:Key="in_Cliente">
+                                                <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="Cliente" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataSolicitud">
+                                                <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="Registro" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_CasoHijo">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CasoHijo" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_NumeroCaso">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(0).ToString" />
+                                              </InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -674,7 +710,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">300,196 300,226 300.5,226 300.5,286.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtraerNo.Contrato workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="AnalisisDocumentos\TiposDocumentos\ExtraerNo.Contrato.xaml">
+                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtraerNo.Contrato workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="AnalisisDocumentos\TiposDocumentos\ExtraerNo.Contrato.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_StringDocto">[Solicitud]</InArgument>
                                         <OutArgument x:TypeArguments="x:String" x:Key="out_NumrtoContrato">[NumeroContrato]</OutArgument>
@@ -807,12 +843,23 @@
                                                                     <av:PointCollection x:Key="ConnectorLocation">230,940 110,940 110,977</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BusquedaPFRemoto workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="ShellRemoto\BusquedaPFRemoto.xaml">
+                                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BusquedaPFRemoto workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="ShellRemoto\BusquedaPFRemoto.xaml">
                                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_NumeroContrato">[NumeroContrato]</InArgument>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Company">[Entidad]</InArgument>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_TipoContrato">[TipoContrato]</InArgument>
-                                                                    <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_Cliente">[DataClienteBusqueda]</OutArgument>
+                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_NumeroContrato">
+                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NumeroContrato" />
+                                                                    </InArgument>
+                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Company">
+                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Entidad" />
+                                                                    </InArgument>
+                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_TipoContrato">
+                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TipoContrato" />
+                                                                    </InArgument>
+                                                                    <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_Cliente">
+                                                                      <mva:VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="DataClienteBusqueda" />
+                                                                    </OutArgument>
+                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_NumeroCaso">
+                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(0).ToString" />
+                                                                    </InArgument>
                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">

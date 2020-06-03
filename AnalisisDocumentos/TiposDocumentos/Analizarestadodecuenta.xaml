@@ -5,6 +5,7 @@
     <x:Property Name="in_NumeroCuenta" Type="InArgument(x:String)" />
     <x:Property Name="in_PathBDBancos" Type="InArgument(x:String)" />
     <x:Property Name="in_ArregloNombre" Type="InArgument(s:String[])" />
+    <x:Property Name="in_NumeroCaso" Type="InArgument(x:String)" />
   </x:Members>
   <sap:VirtualizedContainerService.HintSize>750,1403</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
@@ -38,6 +39,7 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg1:List>
   </TextExpression.ReferencesForImplementation>
@@ -370,7 +372,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,155.5 300,196.5</av:PointCollection>
         </scg1:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log texto extraido del documento" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Validando estado de cuenta&quot;]">
+      <ui:LogMessage DisplayName="Log texto extraido del documento" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Validando estado de cuenta del caso:&quot;+in_NumeroCaso]">
         <sap:WorkflowViewStateService.ViewState>
           <scg1:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>

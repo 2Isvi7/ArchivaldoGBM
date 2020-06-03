@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="in_NumeroContrato" Type="InArgument(x:String)" />
     <x:Property Name="in_NombreCliente" Type="InArgument(x:String)" />
+    <x:Property Name="in_NumeroCaso" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>936,1453</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>701,1453</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MatrizTipificacion_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -34,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -54,6 +55,8 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Llena la matriz de tipificacion para el caso, esto con el fin de identificar a el cliente involucrado en dicho caso" DisplayName="MatrizTipificacion" sap:VirtualizedContainerService.HintSize="711,1288" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -565,7 +568,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">480,773 480,803 280,803 280,827</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Registrar cliente no existente" sap:VirtualizedContainerService.HintSize="563,2282" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                  <Sequence DisplayName="Registrar cliente no existente" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Boolean" Name="Modificar" />
                                     </Sequence.Variables>
@@ -1052,7 +1055,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">290,175.02 290,234.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Realizar matriz de tipificacion" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Realizando matriz de tipificacion&quot;]">
+              <ui:LogMessage DisplayName="Log Realizar matriz de tipificacion" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Realizando matriz de tipificacion del caso: &quot;+in_NumeroCaso]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
